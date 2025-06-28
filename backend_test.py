@@ -85,6 +85,9 @@ class XgenCloudAPITest(unittest.TestCase):
         """Test user login endpoint"""
         print("\n🔍 Testing User Login API...")
         
+        # Wait a moment to ensure registration is fully processed
+        time.sleep(1)
+        
         # Test valid login
         response = requests.post(
             f"{BASE_URL}/login",
@@ -93,6 +96,11 @@ class XgenCloudAPITest(unittest.TestCase):
                 "password": self.test_user["password"]
             }
         )
+        
+        # Print response for debugging
+        print(f"Login response: {response.status_code}")
+        print(f"Login response body: {response.text}")
+        
         self.assertEqual(response.status_code, 200)
         data = response.json()
         
