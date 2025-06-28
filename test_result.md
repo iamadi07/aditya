@@ -276,8 +276,6 @@ metadata:
 
 test_plan:
   current_focus:
-    - "User Registration API"
-    - "User Login API"
     - "Landing Page Layout"
     - "Navigation with Services Dropdown"
     - "Auto-Sliding Partners Section"
